@@ -1,0 +1,44 @@
+Completing below steps using AWS CLI:-
+
+1. Create a key pair
+2. Create a security group
+3. Launch an instance using the above
+created key pair and security group.
+4. Create an EBS volume of 1 GB.
+5. The final step is to attach the above created EBS volume to the instance you created in the
+previous steps.
+
+1.Creating key-pair
+
+aws ec2 create-key-pair --key-name mykey889(Enter any name here)
+
+2.Creating Security Group
+
+aws ec2 create-security-group --group-name MySecurity(Enter any name
+here) --description SGMS(Enter any name here)
+
+3.Launching instance through AWS CLI
+
+Following things are required for launching instance using AWS CLI:-
+
+• Image ID
+• Instance ID
+• Subnet ID
+• Security group ID
+• Key name
+
+Command to launch the instance:
+
+aws ec2 run-instances --image-id ami-010aff33ed5991201 --count 1 --
+instance-type t2.micro --key-name mykey889 --security-group-ids sg-
+0d23a1bc3e8d5b51b --subnet-id subnet-003d0c6f34892cd9b
+
+4.Creating EBS volume
+
+aws ec2 create-volume --volume-type gp2 --size 1 -- availability-zone
+ap-south-1a
+
+5.Command to attach this EBS volume:
+
+aws ec2 attach-volume --volume-id vol-031f692f9ae755597 --instance-id
+i-0fe3164031cbc83b0 --device /dev/sdf

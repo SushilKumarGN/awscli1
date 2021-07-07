@@ -42,3 +42,7 @@ ap-south-1a
 
 aws ec2 attach-volume --volume-id vol-031f692f9ae755597 --instance-id
 i-0fe3164031cbc83b0 --device /dev/sdf
+
+
+
+Note:Reference link for above steps (url)https://1drv.ms/w/s!ArbkgUQgmpWjhF57p1kpOlDdZiC8?e=ToXO50
